@@ -11,7 +11,7 @@ Tiger POMDP has 2 observations and 3 actions.
 
 Observations are: `tiger_left` and `tiger_right`. 
 
-Actions are 0, 1 and 2. 0 denotes `listen`, 1 denotes `open left door` and 2 denotes `open right door`
+Actions are 0, 1 and 2. 0 denotes `listen`, 1 denotes `open the left door` and 2 denotes `open the right door`
 
 Client.py sends an observation to the TigerServer2, and TigerServer2 responds to the Client with an action according to the policy(In this case, the policy solver is QMDP).
 
