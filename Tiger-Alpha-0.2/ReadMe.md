@@ -1,4 +1,4 @@
-# Tiger POMDP environment
+# Code Details
 
 Splendid News! Eversince using MacOS I can FINALLY compile the packages!
 
@@ -16,3 +16,18 @@ Actions are 0, 1 and 2. 0 denotes `listen`, 1 denotes `open left` and 2 denotes 
 Client.py sends an observation to the TigerServer2, and TigerServer2 responds to the Client with an action according to the policy(In this case, the policy solver is QMDP).
 
 Note: This code is in alpha version 0.2. Policy uses a QMDP solver. 
+
+
+# Tiger POMDP Environment Explanation
+
+
+The Tiger POMDP environment is a Partially Observable Markov Decision Process environment.   
+
+In this scenario, an agent must choose between two doors: one hides a tiger (resulting in a penalty if opened), and the other hides treasure (resulting in a reward if opened).   
+
+The agent has three possible actions: `open the left door`, `open the right door`, or `listen` for the tiger's location.  
+
+The listening action provides a noisy observation with two possible outcomes: hearing the tiger on the left or hearing the tiger on the right. 
+
+The goal is to maximize the total reward by strategically balancing the costs and benefits of listening and choosing which door to open based on uncertain observations.
+
