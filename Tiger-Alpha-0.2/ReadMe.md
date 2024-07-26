@@ -2,7 +2,7 @@
 
 Splendid News! Eversince using MacOS I can FINALLY compile the packages!
 
-TigerServer2.jl is a Tiger POMDP environment with a QMDP policy. Run it using `julia TigerServer.jl`  
+TigerServer2.jl is a Tiger POMDP environment with a QMDP policy. Run it using `julia TigerServer2.jl`  
 Client.py is the observer. Run it using `python3 Client.py`  
 
 Note: first run the TigerServer2.jl program, then run the Client.py program.
