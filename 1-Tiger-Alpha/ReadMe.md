@@ -15,4 +15,4 @@ client.py sends an observation to the TigerServer, and TigerServer responds to t
 
 Note: This code is in alpha version. Policy is random. When using other policies I ran into compilation errors.
 
-Note: Windows is so stupid I hate it. I cant compile the packages on windows amd everything fails. In MacOS however, packages seem to compile just fine and the code works.
+Note: Windows is so stupid I hate it. I cant compile the packages on windows and everything fails. In MacOS however, packages seem to compile just fine and the code works.
