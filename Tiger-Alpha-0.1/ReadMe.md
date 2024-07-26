@@ -1,4 +1,4 @@
-# Tiger POMDP environment
+# Code Details
 
 TigerServer.jl is a Tiger POMDP environment with a random policy. Run it using `julia TigerServer.jl`  
 Client.py is the observer. Run it using `python3 client.py`   
@@ -16,3 +16,16 @@ Client.py sends an observation to the TigerServer, and TigerServer responds to t
 Note: This code is in alpha version 0.1. Policy is random. When using other policies I ran into compilation errors.
 
 Note: Windows is so stupid I hate it. I can't compile the packages on Windows and everything fails. In MacOS however, packages seem to compile just fine and the code works.
+
+
+# Tiger POMDP Environment Explanation
+
+
+The Tiger POMDP environment is a classic benchmark problem in artificial intelligence that involves decision-making under uncertainty. In this scenario, an agent must choose between two doors: one hides a tiger (incurring a penalty if opened), and the other hides treasure (yielding a reward if opened).   
+
+The agent has three possible actions: `open the left door`, `open the right door`, or `listen` for the tiger's location.  
+
+The listening action provides a noisy observation with two possible outcomes: hearing the tiger on the left or hearing the tiger on the right. 
+
+The goal is to maximize the total reward by strategically balancing the costs and benefits of listening and choosing which door to open based on uncertain observations.
+
