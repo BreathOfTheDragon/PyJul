@@ -1,6 +1,6 @@
 # Tiger POMDP environment
 
-TigerServer.jl is a Tiger POMDP environment with a random policy. Run it using `julia TigerServer.jl`  
+TigerServer.jl is a Tiger POMDP environment with a random policy. Run it using `julia TigerServer2.jl`  
 Client.py is the observer. Run it using `python3 client.py`   
 
 Note: first run the TigerServer.jl program, then run the client.py programs.
