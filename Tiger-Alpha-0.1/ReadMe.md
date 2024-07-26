@@ -21,7 +21,9 @@ Note: Windows is so stupid I hate it. I can't compile the packages on Windows an
 # Tiger POMDP Environment Explanation
 
 
-The Tiger POMDP environment is a classic benchmark problem in artificial intelligence that involves decision-making under uncertainty. In this scenario, an agent must choose between two doors: one hides a tiger (incurring a penalty if opened), and the other hides treasure (yielding a reward if opened).   
+The Tiger POMDP environment is a Partially Observable Markov Decision Process environment.   
+
+In this scenario, an agent must choose between two doors: one hides a tiger (resulting in a penalty if opened), and the other hides treasure (resulting in a reward if opened).   
 
 The agent has three possible actions: `open the left door`, `open the right door`, or `listen` for the tiger's location.  
 
