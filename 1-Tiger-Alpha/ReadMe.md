@@ -14,3 +14,5 @@ Actions are 0, 1 and 2. 0 denotes `listen`, 1 denotes `open left` and 2 denotes 
 client.py sends an observation to the TigerServer, and TigerServer responds to the client with an action according to the policy.
 
 Note: This code is in alpha version. Policy is random. When using other policies I ran into compilation errors.
+
+Note: Windows is so stupid I hate it. I cant compile the packages on windows amd everything fails. In MacOS however, packages seem to compile just fine and the code works.
