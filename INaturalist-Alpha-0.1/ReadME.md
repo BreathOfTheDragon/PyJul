@@ -1,6 +1,6 @@
 # INaturalist and its API
 
-So INaturalist is this website that facilitates the uploading of pictures of different species of animals.
+So INaturalist is this website that allows us to upload and download pictures of different species of animals.  
 See: `https://www.inaturalist.org/observations`
 
 This website also has an API, and apparently the API has 2 versions, V1 and V2. I used the V1 in here.  
@@ -27,3 +27,5 @@ After storing the .JSON files for each species in the `pollinators.txt` file, we
 
 
 One of the fields in the .JSON file stores the url of the picture for that specific example. Using the `DownloadImages.py` file, we get the url for each example, and download and save it to the respective directory of that species. I also added an indexing number in front of the image name for easier reference and auto sorting of the pictures.
+
+You can ignore the `works_temp.py` file, its a testing code
