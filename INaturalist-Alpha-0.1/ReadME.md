@@ -13,7 +13,7 @@ For example, in this file, I entered `American Bumble Bee` , `Fervid Nomad Bee` 
 
 
 Here, using the `DownloadObservations.py` file, we can get the data from INaturalist, more specifically, the observations.   
-This data contains a lot of different information, like the date the picture was captured, the location, the name of the species, the url of the picture and so many more.
-For an example and more info, see: `https://www.inaturalist.org/observations/export?verifiable=true&page=1&spam=false&place_id=any&user_id=&project_id=`
-When running this file, the code generates as many directories for us as needed, specified by the species names in the `pollinators.txt` file.
-Using the `per_page` variable in the `DownloadObservations.py` file, we can specify how many examples of the species we want to get the data for.
+This data contains a lot of different information, like the date the picture was captured, the location, the name of the species, the url of the picture and so many more.  
+For an example and more info, see: `https://www.inaturalist.org/observations/export?verifiable=true&page=1&spam=false&place_id=any&user_id=&project_id=`  
+When running this file, the code generates as many directories for us as needed, specified by the species names in the `pollinators.txt` file.  
+Using the `per_page` variable in the `DownloadObservations.py` file, we can specify how many examples of the species we want to get the data for.  
