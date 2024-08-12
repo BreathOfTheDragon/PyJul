@@ -46,42 +46,38 @@ def train_model(model, criterion, optimizer, num_epochs=25):
     return model
 
 
-if __name__ == '__main__':
-    device = torch.device("mps")
+device = torch.device("mps")
 
-    # Directory containing the dataset
-    data_dir = './'
+data_dir = './'
 
-    # Data augmentation and normalization for training and validation
-    data_transforms = transforms.Compose([
-        transforms.RandomResizedCrop(224),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-    ])
+data_transforms = transforms.Compose([
+    transforms.RandomResizedCrop(224),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+])
 
-    full_dataset = datasets.ImageFolder(data_dir, transform=data_transforms)
+full_dataset = datasets.ImageFolder(data_dir, transform=data_transforms)
 
-    train_size = int(0.8 * len(full_dataset))
-    val_size = len(full_dataset) - train_size
-    train_dataset, val_dataset = random_split(full_dataset, [train_size, val_size])
+train_size = int(0.8 * len(full_dataset))
+val_size = len(full_dataset) - train_size
+train_dataset, val_dataset = random_split(full_dataset, [train_size, val_size])
 
-    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=0)
-    val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=0)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=0)
+val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=0)
 
-    dataloaders = {'train': train_loader, 'val': val_loader}
-    dataset_sizes = {'train': len(train_dataset), 'val': len(val_dataset)}
-    class_names = full_dataset.classes
+dataloaders = {'train': train_loader, 'val': val_loader}
+dataset_sizes = {'train': len(train_dataset), 'val': len(val_dataset)}
+class_names = full_dataset.classes
 
-    model_ft = models.resnet18(pretrained=True)
-    num_ftrs = model_ft.fc.in_features
-    model_ft.fc = nn.Linear(num_ftrs, len(class_names))
+model_ft = models.resnet18(pretrained=True)
+num_ftrs = model_ft.fc.in_features
+model_ft.fc = nn.Linear(num_ftrs, len(class_names))
 
-    model_ft = model_ft.to(device)
-    criterion = nn.CrossEntropyLoss()
-    optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
-    num_epochs = 25
+model_ft = model_ft.to(device)
+criterion = nn.CrossEntropyLoss()
+optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
+num_epochs = 25
 
-    model_ft = train_model(model_ft, criterion, optimizer_ft, num_epochs=num_epochs)
-    torch.save(model_ft.state_dict(), 'pollinator_resnet18.pth')
-
+model_ft = train_model(model_ft, criterion, optimizer_ft, num_epochs=num_epochs)
+torch.save(model_ft.state_dict(), 'pollinator_resnet18.pth')
