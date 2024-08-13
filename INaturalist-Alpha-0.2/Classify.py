@@ -9,7 +9,7 @@ device = torch.device("mps")
 
 model_ft = models.resnet18(pretrained=False)
 num_ftrs = model_ft.fc.in_features
-model_ft.fc = torch.nn.Linear(num_ftrs, 3)  # Change 3 to the number of classes you have
+model_ft.fc = torch.nn.Linear(num_ftrs, 3)
 
 model_ft.load_state_dict(torch.load('pollinator_resnet18.pth', map_location=device))
 model_ft = model_ft.to(device)
@@ -28,7 +28,7 @@ data_transforms = transforms.Compose([
 
 def classify_image(image_path):
     image = Image.open(image_path).convert('RGB')
-    image = data_transforms(image).unsqueeze(0)  # Add batch dimension
+    image = data_transforms(image).unsqueeze(0)
 
     image = image.to(device)
 
@@ -40,12 +40,12 @@ def classify_image(image_path):
     return predicted_class
 
 
-image_path = './test.jpg'
+image_path = './test1.jpg'
 predicted_class = classify_image(image_path)
 print(f'The predicted class is: {predicted_class}')
-image_path = './test.jpg'
+image_path = './test2.jpg'
 predicted_class = classify_image(image_path)
 print(f'The predicted class is: {predicted_class}')
-image_path = './test.jpg'
+image_path = './test3.jpg'
 predicted_class = classify_image(image_path)
 print(f'The predicted class is: {predicted_class}')
